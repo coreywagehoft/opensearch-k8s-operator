@@ -342,13 +342,11 @@ var _ = Describe("Dashboards Reconciler", func() {
 					Namespace: clusterName,
 				},
 			}, k8sClient), timeout, interval).Should(ExistAnd(
-				HaveMatchingContainer(
-					HaveLabels(
-						"testLabelKey",
-						"testValue",
-						"testLabelKey2",
-						"testValue2",
-					),
+				HaveLabels(
+					"testLabelKey",
+					"testValue",
+					"testLabelKey2",
+					"testValue2",
 				),
 			))
 		})

@@ -25,7 +25,7 @@ var _ = Describe("Builders", func() {
 				}}
 			var result = NewDashboardsDeploymentForCR(&spec, nil, nil, nil)
 			Expect(result.Spec.Template.Annotations).To(Equal(map[string]string{
-				"testAnnotationKey":  "testAnnotationValue",
+				"testAnnotationKey":  "testValue",
 				"testAnnotationKey2": "testValue2",
 			}))
 		})
