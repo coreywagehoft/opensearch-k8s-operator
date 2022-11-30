@@ -71,7 +71,7 @@ func NewDashboardsDeploymentForCR(cr *opsterv1.OpenSearchCluster, volumes []core
 		labels[key] = value
 	}
 
-	// If annotations are not provided, such as during automated testing
+	// If annotations are not provided as a func parameter, such as during automated testing
 	if annotations == nil {
 		annotations = make(map[string]string)
 	}
