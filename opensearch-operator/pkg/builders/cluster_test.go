@@ -102,7 +102,7 @@ var _ = Describe("Builders", func() {
 			}
 			var result = NewSTSForNodePool("foobar", &clusterObject, nodePool, "foobar", nil, nil, nil)
 			Expect(result.Spec.Template.Annotations).To(Equal(map[string]string{
-				"opster.io/config": "foobar", // Added by controller manager automatically
+				"opster.io/config":  "foobar", // Added by controller manager automatically
 				"testAnnotationKey": "testAnnotationValue",
 			}))
 		})

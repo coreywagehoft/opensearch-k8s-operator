@@ -71,6 +71,11 @@ func NewDashboardsDeploymentForCR(cr *opsterv1.OpenSearchCluster, volumes []core
 		labels[key] = value
 	}
 
+	// If annotations are not provided, such as during automated testing
+	if annotations == nil {
+		annotations = make(map[string]string)
+	}
+
 	// cr.Spec.Dashboards.annotations
 	for annotationsKey, annotationsVal := range cr.Spec.Dashboards.Annotations {
 		annotations[annotationsKey] = annotationsVal
